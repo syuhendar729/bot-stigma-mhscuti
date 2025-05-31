@@ -1,0 +1,432 @@
+[
+    {
+        "id": 1,
+        "width": 15,
+        "height": 15,
+        "minimumDelayBetweenMoves": 100,
+        "features": [
+            {
+                "name": "DiamondButtonProvider",
+                "config": {}
+            },
+            {
+                "name": "BaseProvider",
+                "config": {}
+            },
+            {
+                "name": "DiamondProvider",
+                "config": {
+                    "generationRatio": 0.1,
+                    "minRatioForGeneration": 0.01,
+                    "redRatio": 0.2
+                }
+            },
+            {
+                "name": "BotProvider",
+                "config": {
+                    "inventorySize": 5,
+                    "canTackle": true
+                }
+            },
+            {
+                "name": "TeleportProvider",
+                "config": {
+                    "pairs": 1
+                }
+            },
+            {
+                "name": "TeleportRelocationProvider",
+                "config": {
+                    "seconds": 30
+                }
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "width": 15,
+        "height": 15,
+        "minimumDelayBetweenMoves": 100,
+        "features": [
+            {
+                "name": "DiamondButtonProvider",
+                "config": {}
+            },
+            {
+                "name": "BaseProvider",
+                "config": {}
+            },
+            {
+                "name": "DiamondProvider",
+                "config": {
+                    "generationRatio": 0.1,
+                    "minRatioForGeneration": 0.01,
+                    "redRatio": 0.2
+                }
+            },
+            {
+                "name": "BotProvider",
+                "config": {
+                    "inventorySize": 5,
+                    "canTackle": true
+                }
+            },
+            {
+                "name": "TeleportProvider",
+                "config": {
+                    "pairs": 1
+                }
+            },
+            {
+                "name": "TeleportRelocationProvider",
+                "config": {
+                    "seconds": 30
+                }
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "width": 15,
+        "height": 15,
+        "minimumDelayBetweenMoves": 100,
+        "features": [
+            {
+                "name": "DiamondButtonProvider",
+                "config": {}
+            },
+            {
+                "name": "BaseProvider",
+                "config": {}
+            },
+            {
+                "name": "DiamondProvider",
+                "config": {
+                    "generationRatio": 0.1,
+                    "minRatioForGeneration": 0.01,
+                    "redRatio": 0.2
+                }
+            },
+            {
+                "name": "BotProvider",
+                "config": {
+                    "inventorySize": 5,
+                    "canTackle": true
+                }
+            },
+            {
+                "name": "TeleportProvider",
+                "config": {
+                    "pairs": 1
+                }
+            },
+            {
+                "name": "TeleportRelocationProvider",
+                "config": {
+                    "seconds": 30
+                }
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "width": 15,
+        "height": 15,
+        "minimumDelayBetweenMoves": 100,
+        "features": [
+            {
+                "name": "DiamondButtonProvider",
+                "config": {}
+            },
+            {
+                "name": "BaseProvider",
+                "config": {}
+            },
+            {
+                "name": "DiamondProvider",
+                "config": {
+                    "generationRatio": 0.1,
+                    "minRatioForGeneration": 0.01,
+                    "redRatio": 0.2
+                }
+            },
+            {
+                "name": "BotProvider",
+                "config": {
+                    "inventorySize": 5,
+                    "canTackle": true
+                }
+            },
+            {
+                "name": "TeleportProvider",
+                "config": {
+                    "pairs": 1
+                }
+            },
+            {
+                "name": "TeleportRelocationProvider",
+                "config": {
+                    "seconds": 30
+                }
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "width": 15,
+        "height": 15,
+        "minimumDelayBetweenMoves": 100,
+        "features": [
+            {
+                "name": "DiamondButtonProvider",
+                "config": {}
+            },
+            {
+                "name": "BaseProvider",
+                "config": {}
+            },
+            {
+                "name": "DiamondProvider",
+                "config": {
+                    "generationRatio": 0.1,
+                    "minRatioForGeneration": 0.01,
+                    "redRatio": 0.2
+                }
+            },
+            {
+                "name": "BotProvider",
+                "config": {
+                    "inventorySize": 5,
+                    "canTackle": true
+                }
+            },
+            {
+                "name": "TeleportProvider",
+                "config": {
+                    "pairs": 1
+                }
+            },
+            {
+                "name": "TeleportRelocationProvider",
+                "config": {
+                    "seconds": 30
+                }
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "width": 15,
+        "height": 15,
+        "minimumDelayBetweenMoves": 100,
+        "features": [
+            {
+                "name": "DiamondButtonProvider",
+                "config": {}
+            },
+            {
+                "name": "BaseProvider",
+                "config": {}
+            },
+            {
+                "name": "DiamondProvider",
+                "config": {
+                    "generationRatio": 0.1,
+                    "minRatioForGeneration": 0.01,
+                    "redRatio": 0.2
+                }
+            },
+            {
+                "name": "BotProvider",
+                "config": {
+                    "inventorySize": 5,
+                    "canTackle": true
+                }
+            },
+            {
+                "name": "TeleportProvider",
+                "config": {
+                    "pairs": 1
+                }
+            },
+            {
+                "name": "TeleportRelocationProvider",
+                "config": {
+                    "seconds": 30
+                }
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "width": 15,
+        "height": 15,
+        "minimumDelayBetweenMoves": 100,
+        "features": [
+            {
+                "name": "DiamondButtonProvider",
+                "config": {}
+            },
+            {
+                "name": "BaseProvider",
+                "config": {}
+            },
+            {
+                "name": "DiamondProvider",
+                "config": {
+                    "generationRatio": 0.1,
+                    "minRatioForGeneration": 0.01,
+                    "redRatio": 0.2
+                }
+            },
+            {
+                "name": "BotProvider",
+                "config": {
+                    "inventorySize": 5,
+                    "canTackle": true
+                }
+            },
+            {
+                "name": "TeleportProvider",
+                "config": {
+                    "pairs": 1
+                }
+            },
+            {
+                "name": "TeleportRelocationProvider",
+                "config": {
+                    "seconds": 30
+                }
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "width": 15,
+        "height": 15,
+        "minimumDelayBetweenMoves": 100,
+        "features": [
+            {
+                "name": "DiamondButtonProvider",
+                "config": {}
+            },
+            {
+                "name": "BaseProvider",
+                "config": {}
+            },
+            {
+                "name": "DiamondProvider",
+                "config": {
+                    "generationRatio": 0.1,
+                    "minRatioForGeneration": 0.01,
+                    "redRatio": 0.2
+                }
+            },
+            {
+                "name": "BotProvider",
+                "config": {
+                    "inventorySize": 5,
+                    "canTackle": true
+                }
+            },
+            {
+                "name": "TeleportProvider",
+                "config": {
+                    "pairs": 1
+                }
+            },
+            {
+                "name": "TeleportRelocationProvider",
+                "config": {
+                    "seconds": 30
+                }
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "width": 15,
+        "height": 15,
+        "minimumDelayBetweenMoves": 100,
+        "features": [
+            {
+                "name": "DiamondButtonProvider",
+                "config": {}
+            },
+            {
+                "name": "BaseProvider",
+                "config": {}
+            },
+            {
+                "name": "DiamondProvider",
+                "config": {
+                    "generationRatio": 0.1,
+                    "minRatioForGeneration": 0.01,
+                    "redRatio": 0.2
+                }
+            },
+            {
+                "name": "BotProvider",
+                "config": {
+                    "inventorySize": 5,
+                    "canTackle": true
+                }
+            },
+            {
+                "name": "TeleportProvider",
+                "config": {
+                    "pairs": 1
+                }
+            },
+            {
+                "name": "TeleportRelocationProvider",
+                "config": {
+                    "seconds": 30
+                }
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "width": 15,
+        "height": 15,
+        "minimumDelayBetweenMoves": 100,
+        "features": [
+            {
+                "name": "DiamondButtonProvider",
+                "config": {}
+            },
+            {
+                "name": "BaseProvider",
+                "config": {}
+            },
+            {
+                "name": "DiamondProvider",
+                "config": {
+                    "generationRatio": 0.1,
+                    "minRatioForGeneration": 0.01,
+                    "redRatio": 0.2
+                }
+            },
+            {
+                "name": "BotProvider",
+                "config": {
+                    "inventorySize": 5,
+                    "canTackle": true
+                }
+            },
+            {
+                "name": "TeleportProvider",
+                "config": {
+                    "pairs": 1
+                }
+            },
+            {
+                "name": "TeleportRelocationProvider",
+                "config": {
+                    "seconds": 30
+                }
+            }
+        ]
+    }
+]

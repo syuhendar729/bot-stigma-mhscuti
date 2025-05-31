@@ -1,0 +1,193 @@
+
+
+--- Bot Session Started at 2025-06-01 03:40:49 ---
+Moved WEST - Status: 200
+Moved WEST - Status: 200
+Moved WEST - Status: 200
+Moved SOUTH - Status: 200
+Moved WEST - Status: 200
+Moved WEST - Status: 200
+Moved WEST - Status: 200
+Moved WEST - Status: 200
+Moved WEST - Status: 200
+Moved WEST - Status: 200
+Moved SOUTH - Status: 200
+Moved WEST - Status: 200
+Moved WEST - Status: 200
+Moved WEST - Status: 200
+
+
+--- Bot Session Started at 2025-06-01 03:41:58 ---
+Moved EAST - Status: 200
+Moved EAST - Status: 200
+Moved NORTH - Status: 200
+Moved NORTH - Status: 200
+Moved NORTH - Status: 200
+Moved EAST - Status: 200
+Moved SOUTH - Status: 200
+Moved WEST - Status: 200
+Moved WEST - Status: 200
+Moved NORTH - Status: 200
+Moved NORTH - Status: 200
+Moved NORTH - Status: 200
+Moved NORTH - Status: 200
+Moved NORTH - Status: 200
+Moved NORTH - Status: 200
+Moved NORTH - Status: 200
+Moved NORTH - Status: 200
+Moved NORTH - Status: 200
+Moved WEST - Status: 200
+Moved WEST - Status: 200
+Moved WEST - Status: 200
+Moved WEST - Status: 200
+Moved WEST - Status: 200
+Moved WEST - Status: 200
+Moved WEST - Status: 200
+Moved WEST - Status: 200
+Moved WEST - Status: 200
+Moved WEST - Status: 200
+Moved WEST - Status: 200
+Moved SOUTH - Status: 200
+Moved SOUTH - Status: 200
+Moved SOUTH - Status: 200
+Moved SOUTH - Status: 200
+Moved SOUTH - Status: 200
+Moved SOUTH - Status: 200
+Moved SOUTH - Status: 200
+Moved SOUTH - Status: 200
+Moved SOUTH - Status: 200
+Moved SOUTH - Status: 200
+Moved SOUTH - Status: 200
+Moved SOUTH - Status: 200
+
+
+--- Bot Session Started at 2025-06-01 03:46:22 ---
+Bot Name: randyGG, Team: etimo, Email: randyhendriyawan@gmail.com
+
+
+--- Bot Session Started at 2025-06-01 03:46:36 ---
+Bot Name: randyGG, Team: etimo, Email: randyhendriyawan@gmail.com
+
+
+--- Bot Session Started at 2025-06-01 03:51:18 ---
+Bot ID: 4b4cbd72-0a3a-482d-86e2-ddac2e94445b, Name: oda, Email: oda@mail.com
+
+
+--- Bot Session Started at 2025-06-01 03:53:04 ---
+Bot ID: 9f7b0386-0bbd-4438-b3a5-7c253f0f8f88, Name: randyGG, Email: randyhendriyawan@gmail.com
+
+
+--- Bot Session Started at 2025-06-01 03:55:21 ---
+Bot ID: 9f7b0386-0bbd-4438-b3a5-7c253f0f8f88, Name: randyGG, Email: randyhendriyawan@gmail.com
+
+
+--- Bot Session Started at 2025-06-01 03:56:56 ---
+Bot ID: 9f7b0386-0bbd-4438-b3a5-7c253f0f8f88, Name: randyGG, Board ID: 1
+Moved WEST - Status: 200
+Moved WEST - Status: 200
+Moved WEST - Status: 200
+Moved WEST - Status: 200
+Moved WEST - Status: 200
+Moved WEST - Status: 200
+Moved WEST - Status: 200
+Moved NORTH - Status: 200
+Moved NORTH - Status: 200
+Moved NORTH - Status: 200
+Moved EAST - Status: 200
+Moved EAST - Status: 200
+Moved EAST - Status: 200
+Moved NORTH - Status: 200
+Moved NORTH - Status: 200
+Moved NORTH - Status: 200
+Moved NORTH - Status: 200
+Moved NORTH - Status: 200
+Moved NORTH - Status: 200
+Moved NORTH - Status: 200
+Moved NORTH - Status: 200
+Moved NORTH - Status: 200
+Moved NORTH - Status: 200
+
+
+--- Bot Session Started at 2025-06-01 04:00:50 ---
+Bot ID: 9f7b0386-0bbd-4438-b3a5-7c253f0f8f88, Name: randyGG, Board ID: 1
+Moved EAST - Status: 200
+Moved NORTH - Status: 200
+
+
+--- Bot Session Started at 2025-06-01 04:01:19 ---
+Bot ID: 9f7b0386-0bbd-4438-b3a5-7c253f0f8f88, Name: randyGG, Board ID: 1
+
+
+--- Bot Session Started at 2025-06-01 04:03:41 ---
+Bot ID: 9f7b0386-0bbd-4438-b3a5-7c253f0f8f88, Name: randyGG, Board ID: 1
+Moved WEST - Status: 200 - Inventory: 0/5
+Moved WEST - Status: 200 - Inventory: 0/5
+Moved WEST - Status: 200 - Inventory: 0/5
+Moved WEST - Status: 200 - Inventory: 0/5
+Moved WEST - Status: 200 - Inventory: 0/5
+Moved WEST - Status: 200 - Inventory: 0/5
+Moved WEST - Status: 200 - Inventory: 0/5
+Moved NORTH - Status: 200 - Inventory: 0/5
+Moved NORTH - Status: 200 - Inventory: 0/5
+Moved NORTH - Status: 200 - Inventory: 0/5
+Moved NORTH - Status: 200 - Inventory: 0/5
+
+
+--- Bot Session Started at 2025-06-01 04:07:16 ---
+Bot ID: 9f7b0386-0bbd-4438-b3a5-7c253f0f8f88, Name: randyGG, Board ID: 1
+Moved NORTH - Status: 200 - Inventory: 0/5
+Moved NORTH - Status: 200 - Inventory: 0/5
+Moved NORTH - Status: 200 - Inventory: 0/5
+
+
+--- Bot Session Started at 2025-06-01 04:08:25 ---
+Bot ID: 9f7b0386-0bbd-4438-b3a5-7c253f0f8f88, Name: randyGG, Board ID: 1
+Moved WEST - Status: 200 - Inventory: 0/5
+Moved NORTH - Status: 200 - Inventory: 0/5
+Moved NORTH - Status: 200 - Inventory: 0/5
+Moved NORTH - Status: 200 - Inventory: 0/5
+Moved NORTH - Status: 200 - Inventory: 0/5
+Moved NORTH - Status: 200 - Inventory: 0/5
+Moved NORTH - Status: 200 - Inventory: 0/5
+Moved NORTH - Status: 200 - Inventory: 0/5
+Moved NORTH - Status: 200 - Inventory: 0/5
+Moved NORTH - Status: 200 - Inventory: 0/5
+Moved NORTH - Status: 200 - Inventory: 0/5
+Moved NORTH - Status: 200 - Inventory: 0/5
+Moved WEST - Status: 200 - Inventory: 0/5
+
+
+--- Bot Session Started at 2025-06-01 04:13:11 ---
+Bot ID: 9f7b0386-0bbd-4438-b3a5-7c253f0f8f88, Name: randyGG, Board ID: 1
+Moved EAST - Status: 200 - Inventory: 0/5
+Moved EAST - Status: 200 - Inventory: 0/5
+Moved EAST - Status: 200 - Inventory: 0/5
+Moved EAST - Status: 200 - Inventory: 0/5
+Moved SOUTH - Status: 200 - Inventory: 0/5
+Moved WEST - Status: 200 - Inventory: 0/5
+Moved SOUTH - Status: 200 - Inventory: 0/5
+Moved SOUTH - Status: 200 - Inventory: 0/5
+Moved SOUTH - Status: 200 - Inventory: 0/5
+Moved EAST - Status: 200 - Inventory: 0/5
+Moved EAST - Status: 200 - Inventory: 0/5
+Moved EAST - Status: 200 - Inventory: 0/5
+Moved EAST - Status: 200 - Inventory: 0/5
+Moved EAST - Status: 200 - Inventory: 0/5
+Moved EAST - Status: 200 - Inventory: 0/5
+Moved EAST - Status: 200 - Inventory: 0/5
+
+
+--- Bot Session Started at 2025-06-01 04:18:19 ---
+Bot ID: 9f7b0386-0bbd-4438-b3a5-7c253f0f8f88, Name: randyGG, Board ID: 1
+Moved EAST - Status: 200 - Inventory: 0/5
+Moved EAST - Status: 200 - Inventory: 0/5
+Moved EAST - Status: 200 - Inventory: 0/5
+Moved SOUTH - Status: 200 - Inventory: 0/5
+Moved SOUTH - Status: 200 - Inventory: 0/5
+Moved EAST - Status: 200 - Inventory: 0/5
+Moved EAST - Status: 200 - Inventory: 0/5
+Moved SOUTH - Status: 200 - Inventory: 0/5
+Moved SOUTH - Status: 200 - Inventory: 0/5
+Moved SOUTH - Status: 200 - Inventory: 0/5
+Moved SOUTH - Status: 200 - Inventory: 0/5
+Moved SOUTH - Status: 200 - Inventory: 0/5
