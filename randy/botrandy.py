@@ -6,7 +6,7 @@ import os
 import random
 
 class BotClient:
-    def __init__(self, api_base_url, bot_id):
+    def __init__(self, api_base_url, bot_id, move_delay=0.2):
         self.base_url = f"{api_base_url}/bots/{bot_id}"
         self.api_base_url = api_base_url
         self.bot_id = bot_id
@@ -20,6 +20,10 @@ class BotClient:
         self.log_file_path = "Randy/bot_log.txt"
         self.home_position = None  # Store spawn position
         self.diamond_visits = 0    # Track diamond visits
+        self.move_delay = move_delay  # Configurable move delay
+        self.cache = {}  # For caching pathfinding results
+        self.diamond_targets_history = set()  # Track diamonds we've targeted
+        self.minimum_server_delay = 0.1  # Will be updated from server
         
         os.makedirs("Randy", exist_ok=True)
         with open(self.log_file_path, "a") as log_file:
@@ -29,7 +33,7 @@ class BotClient:
         url = f"{self.base_url}/join"
         payload = {
             "preferredBoardId": preferred_board_id,
-            "name": self.my_name
+            "name": self.my_name  # Make sure name is being sent properly
         }
         response = requests.post(url, json=payload, headers=self.headers)
         print(f"Join response: {response.status_code}")
@@ -44,6 +48,13 @@ class BotClient:
             print(json.dumps(data, indent=4))
             self.game_objects = data.get("gameObjects", [])
             bot_obj = self.find_bot()
+            
+            # Make sure the bot ID is properly stored from the server response
+            for obj in self.game_objects:
+                if obj.get("type") == "BotGameObject" and obj.get("properties", {}).get("name") == self.my_name:
+                    self.bot_id = obj.get("id")  # Update bot_id from server
+                    print(f"Updated bot ID to: {self.bot_id}")
+                    break
             
             # Store spawn/home position
             if self.bot_position:
@@ -339,7 +350,10 @@ class BotClient:
 
     def move(self, direction):
         url = f"{self.base_url}/move"
-        payload = {"direction": direction}
+        payload = {
+            "direction": direction,
+            "botId": self.bot_id  # Include your bot ID in every move
+        }
         response = requests.post(url, json=payload, headers=self.headers)
         
         try:
@@ -443,7 +457,7 @@ class BotClient:
                 print(f"Teleportation detected from {previous_pos} to {new_pos}")
             
             previous_pos = copy.deepcopy(new_pos)
-            time.sleep(0.2)
+            time.sleep(0.5)
         
         return True
 
@@ -617,7 +631,7 @@ class BotClient:
 
 def main():
     # Update API URL if needed
-    API_BASE_URL = "https://rndyd-2404-8000-100b-82e-f845-7ffd-316e-7e74.a.free.pinggy.link/api"
+    API_BASE_URL = "https://rngjb-182-253-63-43.a.free.pinggy.link/api"
     BOT_ID = "9f7b0386-0bbd-4438-b3a5-7c253f0f8f88"
     
     # Initialize the bot client
