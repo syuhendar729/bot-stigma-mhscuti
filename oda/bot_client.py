@@ -12,7 +12,8 @@ class BotClient:
         }
         self.bot_position = None
         self.game_objects = []
-        self.my_name = None  # Nama bot kita, diambil dari gameObjects
+        self.my_name = None
+        self.is_playing = True
 
     def join(self, preferred_board_id=1):
         url = f"{self.base_url}/join"
@@ -21,7 +22,7 @@ class BotClient:
         print(f"Join response: {response.status_code}")
         try:
             data = response.json()
-            print(json.dumps(data, indent=4))
+            # print(json.dumps(data, indent=4))  # Matikan print detail besar
         except Exception:
             print(response.text)
             return False
@@ -31,7 +32,6 @@ class BotClient:
         return True
 
     def find_bot(self):
-        # Cari bot kita sendiri dan simpan posisi serta nama
         for obj in self.game_objects:
             if obj.get("type") == "BotGameObject":
                 self.bot_position = obj.get("position")
@@ -43,7 +43,6 @@ class BotClient:
         self.my_name = None
 
     def get_my_base_and_inventory(self):
-        # Cari base dan inventory count dari bot kita sendiri
         base_pos = None
         inventory_count = 0
         for obj in self.game_objects:
@@ -54,11 +53,8 @@ class BotClient:
         return base_pos, inventory_count
 
     def get_inventory_limit(self):
-        # Dapatkan kapasitas inventory dari BotProvider config jika ada, default 5
-        # Bisa ambil dari fitur atau properties bot di gameObjects
         for obj in self.game_objects:
             if obj['type'] == 'BotGameObject' and obj.get('properties', {}).get('name') == self.my_name:
-                # Jika tersedia bisa disesuaikan
                 return obj['properties'].get('inventorySize', 5)
         return 5
 
@@ -73,17 +69,20 @@ class BotClient:
                 })
         return diamonds
 
+    def get_teleport_pairs(self):
+        pairs = {}
+        for obj in self.game_objects:
+            if obj.get("type") == "TeleportGameObject":
+                pid = obj.get("properties", {}).get("pairId")
+                if pid:
+                    if pid not in pairs:
+                        pairs[pid] = []
+                    pairs[pid].append(obj["position"])
+        return pairs
+
     @staticmethod
     def manhattan_distance(p1, p2):
         return abs(p1['x'] - p2['x']) + abs(p1['y'] - p2['y'])
-
-    def get_diamonds_sorted(self):
-        diamonds = self.get_diamonds()
-        for d in diamonds:
-            d['distance'] = self.manhattan_distance(self.bot_position, d['position'])
-        # Sort diamond by points desc, then distance asc
-        diamonds.sort(key=lambda d: (-d['points'], d['distance']))
-        return diamonds
 
     def generate_path_to(self, start, target):
         directions = []
@@ -114,23 +113,61 @@ class BotClient:
         response = requests.post(url, json=payload, headers=self.headers)
         print(f"Move {direction} response: {response.status_code}")
         try:
-            # Update game state setelah move agar posisi bot dan gameObjects update
+            if response.status_code == 403:
+                print("Bot is no longer playing on the board. Stopping moves.")
+                self.is_playing = False
+                return False
+
             data = response.json()
-            print(json.dumps(data, indent=4))
+            # print(json.dumps(data, indent=4))  # Matikan print detail besar
             self.game_objects = data.get("gameObjects", [])
-            self.find_bot()  # Update posisi bot terbaru
+            self.find_bot()
+            print(f"Bot current position: {self.bot_position}")
             return True
         except Exception:
             print(response.text)
+            self.is_playing = False
             return False
 
     def follow_path(self, directions):
         for dir in directions:
+            if not self.is_playing:
+                print("Bot is no longer playing, stopping follow_path.")
+                break
             success = self.move(dir)
             if not success:
                 print("Move failed, stopping.")
                 break
-            time.sleep(0.2)
+            time.sleep(0.5)
+
+    def use_teleport_if_beneficial(self, current_pos, target_pos):
+        pairs = self.get_teleport_pairs()
+        direct_path = self.generate_path_to(current_pos, target_pos)
+        direct_dist = len(direct_path)
+
+        for pair_id, positions in pairs.items():
+            if len(positions) != 2:
+                continue
+
+            pos_a, pos_b = positions[0], positions[1]
+
+            dist_to_a = self.manhattan_distance(current_pos, pos_a)
+            dist_from_b_to_target = self.manhattan_distance(pos_b, target_pos)
+            total_dist_via_teleport_1 = dist_to_a + 1 + dist_from_b_to_target
+
+            dist_to_b = self.manhattan_distance(current_pos, pos_b)
+            dist_from_a_to_target = self.manhattan_distance(pos_a, target_pos)
+            total_dist_via_teleport_2 = dist_to_b + 1 + dist_from_a_to_target
+
+            if total_dist_via_teleport_1 < direct_dist:
+                path_to_teleport = self.generate_path_to(current_pos, pos_a)
+                return path_to_teleport, pos_b
+
+            if total_dist_via_teleport_2 < direct_dist:
+                path_to_teleport = self.generate_path_to(current_pos, pos_b)
+                return path_to_teleport, pos_a
+
+        return direct_path, target_pos
 
     def collect_all_diamonds(self):
         base_pos, inventory_count = self.get_my_base_and_inventory()
@@ -144,40 +181,58 @@ class BotClient:
 
         current_pos = copy.deepcopy(self.bot_position)
 
-        while True:
+        while self.is_playing:
             diamonds = self.get_diamonds()
             if not diamonds:
                 print("No diamonds left on the board.")
                 break
 
-            # Hitung ulang jarak dan sort dengan prioritas poin + jarak
+            if current_pos is None:
+                print("Current position is None. Bot might have been removed from board.")
+                break
+
             for d in diamonds:
                 d['distance'] = self.manhattan_distance(current_pos, d['position'])
             diamonds.sort(key=lambda d: (-d['points'], d['distance']))
 
-            # Kalau inventory penuh, balik dulu ke base
             if inventory_count >= inventory_limit:
-                print("Inventory full, returning to base.")
+                print(f"Inventory full. Bot at {current_pos}. Returning to base at {base_pos}.")
                 path_to_base = self.generate_path_to(current_pos, base_pos)
                 self.follow_path(path_to_base)
                 inventory_count = 0
-                current_pos = base_pos
+                current_pos = copy.deepcopy(self.bot_position)
                 continue
 
-            # Pilih diamond target pertama (paling prioritas)
             target = diamonds[0]
+            print(f"Bot at {current_pos}, moving to diamond at {target['position']} with points {target['points']}")
 
-            # Generate path ke diamond
-            path_to_diamond = self.generate_path_to(current_pos, target['position'])
-            print(f"Moving to diamond {target['id']} at {target['position']} with points {target['points']}")
+            path_to_target, pos_after_teleport = self.use_teleport_if_beneficial(current_pos, target['position'])
 
-            self.follow_path(path_to_diamond)
+            self.follow_path(path_to_target)
+            current_pos = copy.deepcopy(self.bot_position)
+
+            if not self.is_playing:
+                print("Stopping as bot is no longer playing.")
+                break
+
+            if pos_after_teleport != target['position']:
+                print(f"Teleporting to {pos_after_teleport}")
+                current_pos = pos_after_teleport
+
+            if current_pos != target['position']:
+                path_after_teleport = self.generate_path_to(current_pos, target['position'])
+                self.follow_path(path_after_teleport)
+                current_pos = copy.deepcopy(self.bot_position)
+
             inventory_count += 1
-            current_pos = target['position']
 
-        # Setelah tidak ada diamond lagi, pastikan inventory dikosongkan ke base
-        if inventory_count > 0 and current_pos != base_pos:
-            print("No more diamonds, returning to base to deposit remaining inventory.")
+            if not self.is_playing:
+                print("Stopping as bot is no longer playing.")
+                break
+
+        if self.is_playing and inventory_count > 0 and current_pos != base_pos:
+            print(f"No more diamonds. Bot at {current_pos}, returning to base at {base_pos} to deposit inventory.")
             path_to_base = self.generate_path_to(current_pos, base_pos)
             self.follow_path(path_to_base)
             inventory_count = 0
+
