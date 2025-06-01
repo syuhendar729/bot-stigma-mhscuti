@@ -6,7 +6,7 @@ import json
 def manhattan_distance(p1, p2):
     return abs(p1['x'] - p2['x']) + abs(p1['y'] - p2['y'])
 
-BASE_URL = "https://rnifg-2404-8000-100b-82e-f845-7ffd-316e-7e74.a.free.pinggy.link/api/bots/0e9dc6c8-5168-4525-9ab1-cbe4c1b42467"
+BASE_URL = "https://rnlsy-182-253-63-43.a.free.pinggy.link/api/bots/3bd45572-f3ab-4610-985e-a0fa910cac35"
 
 join_url = f"{BASE_URL}/join"
 join_payload = {"preferredBoardId": 1}
@@ -60,7 +60,7 @@ if data:
         for d in diamonds:
             print(f"Diamond ID {d['id']} at ({d['position']['x']}, {d['position']['y']}) - Points: {d['points']} - Distance: {d['distance']}")
 
-directions = ["WEST", "NORTH", "SOUTH", "NORTH", "WEST"]
+directions = ["WEST", "SOUTH", "SOUTH", "SOUTH", "WEST"]
 move_url = f"{BASE_URL}/move"
 
 for direction in directions:
