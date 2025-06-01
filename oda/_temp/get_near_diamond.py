@@ -59,15 +59,15 @@ if data:
         for d in diamonds:
             print(f"Diamond ID {d['id']} at ({d['position']['x']}, {d['position']['y']}) - Points: {d['points']} - Distance: {d['distance']}")
 
-# directions = ["WEST", "SOUTH", "SOUTH", "SOUTH", "WEST"]
-# move_url = f"{BASE_URL}/move"
-#
-# for direction in directions:
-#     move_payload = {"direction": direction}
-#     response = requests.post(move_url, json=move_payload, headers=headers)
-#     print(f"Move {direction} response: {response.status_code}")
-#     try:
-#         print(json.dumps(response.json(), indent=4))
-#     except Exception:
-#         print(response.text)
-#     time.sleep(0.5)
+directions = ["WEST", "SOUTH", "SOUTH", "SOUTH", "WEST"]
+move_url = f"{BASE_URL}/move"
+
+for direction in directions:
+    move_payload = {"direction": direction}
+    response = requests.post(move_url, json=move_payload, headers=headers)
+    print(f"Move {direction} response: {response.status_code}")
+    try:
+        print(json.dumps(response.json(), indent=4))
+    except Exception:
+        print(response.text)
+    time.sleep(0.5)
