@@ -218,7 +218,7 @@ class ManualController:
 
 def main():
     # Use the same API URL and bot ID as botrandy.py
-    API_BASE_URL = "https://rndyd-2404-8000-100b-82e-f845-7ffd-316e-7e74.a.free.pinggy.link/api"
+    API_BASE_URL = "https://rngjb-182-253-63-43.a.free.pinggy.link/api"
     BOT_ID = "9f7b0386-0bbd-4438-b3a5-7c253f0f8f88"
     
     print(f"{Fore.CYAN}=== BOT MANUAL CONTROLLER ==={Style.RESET_ALL}")
