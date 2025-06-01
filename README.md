@@ -1,9 +1,10 @@
+<div align="center">
 # Bot Stigma - MhsCuti
 
 [![Python](https://img.shields.io/badge/Python-3.8-blue.svg)](https://www.python.org/)
 [![Pygame](https://img.shields.io/badge/Request-2.31.0-green.svg)](https://www.pygame.org/)
 [![Version](https://img.shields.io/badge/Version-1.0-orange.svg)]()
-
+</div
 ## Algoritma Greedy dalam Bot Diamond Game
 
 Bot ini mengimplementasikan algoritma greedy untuk mengoptimalkan pengumpulan diamond dalam permainan. Strategi greedy yang digunakan mempertimbangkan berbagai faktor untuk pengambilan keputusan yang efisien dan efektif.
@@ -46,5 +47,6 @@ python main.py
 ```
 
 ## Author
+<div align="center">
 <table> <tr> <td align="center"> <a href="https://github.com/syuhendar729"> <img src="https://github.com/syuhendar729.png" width="100px;" alt="Syuhada Rantisi"/> <br /> <sub><b>Syuhada Rantisi</b></sub> </a> <br /> <sub>122140092</sub> </td> <td align="center"> <a href="https://github.com/Randyh-25"> <img src="https://github.com/Randyh-25.png" width="100px;" alt="Randy Hendriyawan"/> <br /> <sub><b>Randy Hendriyawan</b></sub> </a> <br /> <sub>122140171</sub> </td> <td align="center"> <a href="https://github.com/MuhammadRiveldo"> <img src="https://github.com/MuhammadRiveldo.png" width="100px;" alt="Muhammad Riveldo"/> <br /> <sub><b>Muhammad Riveldo H.P</b></sub> </a> <br /> <sub>122140037</sub> </td> </tr> </table>
-
+</div>
