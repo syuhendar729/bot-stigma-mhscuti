@@ -186,7 +186,7 @@ class BotClient:
             if not success:
                 print("Move failed, stopping.")
                 break
-            time.sleep(0.5)
+            time.sleep(0.2)
 
     def use_teleport_if_beneficial(self, current_pos, target_pos):
         # """

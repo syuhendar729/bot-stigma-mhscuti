@@ -1,3 +1,9 @@
+# Muhammad Riveldo H.P 122140037
+# Syuhada Rantisi 122140092
+# Randy Hendriyawan 122140171
+# Kelompok: MhsCuti
+# Strategi Algoritma: RB (Imam Ekowicaksono, S.Si., M.Si.)
+
 import requests
 import time
 import copy
@@ -180,7 +186,7 @@ class BotClient:
             if not success:
                 print("Move failed, stopping.")
                 break
-            time.sleep(0.5)
+            time.sleep(0.2)
 
     def use_teleport_if_beneficial(self, current_pos, target_pos):
         # """
@@ -216,10 +222,7 @@ class BotClient:
 
         return direct_path, target_pos
 
-
-
-    def collect_all_diamonds(self):
-        # """
+      # """
         # Loop utama pengambilan diamond:
         # - Ambil info base dan inventory
         # - Loop selama bot aktif dan diamond masih ada
@@ -228,6 +231,10 @@ class BotClient:
         # - Pilih diamond terbaik, cek teleport, lalu follow path
         # - Update posisi bot dan inventory secara realtime dari response server
         # """
+
+
+
+    def collect_all_diamonds(self):
         base_pos, inventory_count = self.get_my_base_and_inventory()
         inventory_limit = self.get_inventory_limit()
 
@@ -249,10 +256,11 @@ class BotClient:
                 print("Current position is None. Bot might have been removed from board.")
                 break
 
-            # Hitung jarak dan sort diamond berdasarkan poin desc, jarak asc
             for d in diamonds:
                 d['distance'] = self.manhattan_distance(current_pos, d['position'])
-            diamonds.sort(key=lambda d: (-d['points'], d['distance']))
+                d['score_per_distance'] = d['points'] / max(d['distance'], 1)  # hindari pembagian 0
+
+            diamonds.sort(key=lambda d: -d['score_per_distance'])
 
             # Jika inventory penuh, kembali ke base untuk deposit
             if inventory_count >= inventory_limit:
@@ -305,7 +313,7 @@ if __name__ == "__main__":
     # base_url = "https://rnpmd-182-253-63-43.a.free.pinggy.link/api/bots/4b4cbd72-0a3a-482d-86e2-ddac2e94445b"
     bot_client = BotClient(base_url)
 
-    if bot_client.join(preferred_board_id=2):
+    if bot_client.join(preferred_board_id=1):
         bot_client.collect_all_diamonds()
     else:
         print("Failed to join the board.")
