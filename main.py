@@ -319,8 +319,3 @@ if __name__ == "__main__":
         print("Failed to join the board.")
 
 
-# {
-#   "name": "sr",
-#   "email": "sr@mail.com",
-#   "id": "d41b9e9a-97ee-480c-9670-5ccec6edf1b7"
-# }
