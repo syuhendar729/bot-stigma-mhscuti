@@ -1,9 +1,3 @@
-# Muhammad Riveldo H.P 122140037
-# Syuhada Rantisi 122140092
-# Randy Hendriyawan 122140171
-# Kelompok: MhsCuti
-# Strategi Algoritma: RB (Imam Ekowicaksono, S.Si., M.Si.)
-
 import requests
 import time
 import copy
@@ -306,3 +300,19 @@ class BotClient:
             self.follow_path(path_to_base)
             inventory_count = 0
 
+if __name__ == "__main__":
+    base_url = "http://localhost:3000/api/bots/d41b9e9a-97ee-480c-9670-5ccec6edf1b7"
+    # base_url = "https://rnpmd-182-253-63-43.a.free.pinggy.link/api/bots/4b4cbd72-0a3a-482d-86e2-ddac2e94445b"
+    bot_client = BotClient(base_url)
+
+    if bot_client.join(preferred_board_id=2):
+        bot_client.collect_all_diamonds()
+    else:
+        print("Failed to join the board.")
+
+
+# {
+#   "name": "sr",
+#   "email": "sr@mail.com",
+#   "id": "d41b9e9a-97ee-480c-9670-5ccec6edf1b7"
+# }
